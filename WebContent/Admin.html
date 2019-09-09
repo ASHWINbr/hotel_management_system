@@ -1,0 +1,50 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>
+		</title>
+		<link rel="stylesheet" type="text/css" href="./style/style.css">
+		<script type = "text/javascript" src ="./js/script.js"></script> 
+	</head>
+	<body>
+		<header class="cmpy-header">
+			<div class="cmpy-properties">
+				<h1>yo!yo!</h1>
+				<img src="./images/hotel.png" id="cmpy-logo" alt="company logo"/>
+			</div>
+			<nav class='nav-bar'>
+				<a href="./">HOME</a>
+				<a href="./">SIGN UP</a>
+			</nav>
+		</header>
+		<div class="admin_Container">
+<form name="Addform" action="AddHotel.jsp">
+<button>Add Hotel</button>
+</form>
+			
+<form name="editform" action="EditServlet">
+          <button id="editEnabled">Edit Hotel</button>
+          <div id="editDisabled">
+		  <select id="id" name="id" onchange="document.editform.submit();">
+			<option value="">Select Id</option>
+			<c:forEach items="${id}" var="item1">
+				<option value="${item1}">${item1}</option>
+			</c:forEach>
+		    </select>
+		</div>
+</form>			
+<form name="Deleteform" action="DeleteServlet">
+<button>Delete Hotel</button>
+</form>
+		</div>
+		<footer class="cmpy-footer">
+			<a href="">ABOUT US</a>
+			<a href="">CONTACT US</a>
+		</footer>
+	</body>
+</html>
